@@ -18,9 +18,9 @@ export function HomePage({ featuredProducts, allProducts, onViewAllProducts }: H
 
       <section className="container mx-auto px-4 py-16">
         <div className="text-center mb-12">
-          <h2 className="mb-4">Featured Products</h2>
+          <h2 className="mb-4">Онцлох бүтээгдэхүүн</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Discover our curated collection of minimalist products in timeless black and white
+            QSTORE дээрх онцлох бүтээгдэхүүн
           </p>
         </div>
 
@@ -32,12 +32,12 @@ export function HomePage({ featuredProducts, allProducts, onViewAllProducts }: H
 
         <div className="text-center">
           <Button onClick={onViewAllProducts} size="large" variant="contained">
-            View All Products
+            Бүх бүтээгдэхүүнийг үзэх
           </Button>
         </div>
       </section>
 
-      <section className="bg-muted py-16">
+      {/* <section className="bg-muted py-16">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8 text-center">
             <div>
@@ -54,7 +54,7 @@ export function HomePage({ featuredProducts, allProducts, onViewAllProducts }: H
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }

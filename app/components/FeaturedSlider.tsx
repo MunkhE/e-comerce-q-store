@@ -4,10 +4,9 @@ import { useState, useEffect } from 'react';
 import { toast } from 'sonner';
 import { Button } from '@mui/material';
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronRight } from "lucide-react";
-import { ChevronLeft } from "lucide-react";
 import { useCart } from '@/app/context/CartContext';
 import { Product } from '@/app/types';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface FeaturedSliderProps {
   products: Product[];
@@ -57,6 +56,26 @@ export function FeaturedSlider({ products }: FeaturedSliderProps) {
                 alt={products[currentIndex].name}
                 className="w-full h-full object-cover"
               />
+              <Button
+                variant="outlined"
+                size="medium"
+                onClick={prevSlide}
+                className="!absolute left-4 top-1/2 -translate-y-1/2
+                          !bg-white/20 hover:!bg-white/30 !text-white !border-none
+                          !backdrop-blur-sm !rounded-full !p-2 z-10 transition"
+              >
+                <ChevronLeft className="h-6 w-6" />
+              </Button>
+              <Button
+                variant="outlined"
+                size="medium"
+                onClick={nextSlide}
+                className="!absolute right-4 top-1/2 -translate-y-1/2
+                          !bg-white/20 hover:!bg-white/30 !text-white !border-none
+                          !backdrop-blur-sm !rounded-full !p-2 z-10 transition"
+              >
+                <ChevronRight className="h-6 w-6" />
+              </Button>
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12 text-white">
                 <div className="container mx-auto max-w-6xl">
@@ -66,11 +85,13 @@ export function FeaturedSlider({ products }: FeaturedSliderProps) {
                   </p>
                   <div className="flex items-center gap-4">
                     <span className="text-white">${products[currentIndex].price}</span>
-                    <Button 
+                    <Button
                       onClick={() => handleAddToCart(products[currentIndex])}
-                      className="bg-white text-black hover:bg-white/90"
+                      className="rounded-full px-6 py-2 text-sm font-semibold text-white 
+                                bg-sky-500 hover:bg-sky-400 transition-all shadow-md 
+                                hover:shadow-lg hover:scale-105"
                     >
-                      Add to Cart
+                      Сагсанд нэмэх
                     </Button>
                   </div>
                 </div>
@@ -79,24 +100,6 @@ export function FeaturedSlider({ products }: FeaturedSliderProps) {
           </motion.div>
         </AnimatePresence>
       </div>
-
-      <Button
-        variant="outlined"
-        size="medium"
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white z-10"
-        onClick={prevSlide}
-      >
-        <ChevronLeft className="h-6 w-6" />
-      </Button>
-      
-      <Button
-        variant="outlined"
-        size="medium"
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white z-10"
-        onClick={nextSlide}
-      >
-        <ChevronRight className="h-6 w-6" />
-      </Button>
 
       <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
         {products.map((_, index) => (

@@ -18,7 +18,7 @@ export function CartSheet({ open, onOpenChange }: CartSheetProps) {
     <Sheet open={open} onOpenChange={onOpenChange}>
       <SheetContent className="w-full sm:max-w-lg">
         <SheetHeader>
-          <SheetTitle>Shopping Cart</SheetTitle>
+          <SheetTitle>Худалдааны сагс</SheetTitle>
           <SheetDescription>
             {items.length === 0 ? 'Your cart is empty' : `${items.length} item(s) in cart`}
           </SheetDescription>

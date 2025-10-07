@@ -22,9 +22,9 @@ export function ProductsPage({ products }: ProductsPageProps) {
     <div className="min-h-screen py-16">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h1 className="mb-4">All Products</h1>
+          <h1 className="mb-4">Бүх бараа</h1>
           <p className="text-muted-foreground">
-            Browse our complete collection
+            Манай бүрэн цуглуулгыг үзээрэй
           </p>
         </div>
 

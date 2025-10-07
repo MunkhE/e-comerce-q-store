@@ -1,31 +1,33 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { AuthProvider } from "./context/AuthContext";
 import { CartProvider } from "./context/CartContext";
-import { ClientLayout } from "@/components/ClientLayout";
+import { ClientLayout } from "@/app/components/ClientLayout";
+import { ThemeProvider } from "./context/ThemeContext";
+import icon from "@/app/documents/main-icon.png";
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-export const metadata: Metadata = {
+export const metadata = {
   title: "QSTORE",
   description: "SHOP",
+  icons: {
+    icon: icon.src,
+    shortcut: icon.src,
+    apple: icon.src,
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body>
-        <AuthProvider>
-          <CartProvider>
-            <div className="min-h-screen bg-background">
-              <ClientLayout>{children}</ClientLayout>
-            </div>
-          </CartProvider>
-        </AuthProvider>
+        <ThemeProvider>
+          <AuthProvider>
+            <CartProvider>
+              <div className="min-h-screen bg-background">
+                <ClientLayout>{children}</ClientLayout>
+              </div>
+            </CartProvider>
+          </AuthProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -40,7 +40,7 @@ export function ProductCard({ product }: ProductCardProps) {
         </p>
         <Button onClick={handleAddToCart} className="w-full" variant="contained">
           <ShoppingCart className="h-4 w-4 mr-2" />
-          Add to Cart
+          Сагсанд нэмэх
         </Button>
       </div>
     </Card>
