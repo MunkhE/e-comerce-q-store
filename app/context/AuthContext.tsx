@@ -8,6 +8,7 @@ interface AuthContextType {
   login: (email: string, password: string) => Promise<void>;
   logout: () => void;
   isAuthenticated: boolean;
+  loginWithGoogle: () => Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -16,7 +17,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
 
   const login = async (email: string, password: string) => {
-    // Mock login - in a real app, this would call an API
     await new Promise(resolve => setTimeout(resolve, 500));
     
     setUser({
@@ -37,6 +37,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         login,
         logout,
         isAuthenticated: !!user,
+        loginWithGoogle,
       }}
     >
       {children}
@@ -51,3 +52,8 @@ export function useAuth() {
   }
   return context;
 }
+
+const loginWithGoogle = async () => {
+  // const provider = new GoogleAuthProvider();
+  // await signInWithPopup(auth, provider);
+};

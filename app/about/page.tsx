@@ -2,16 +2,16 @@ export default function About() {
   return (
     <div className="min-h-screen py-16">
       <div className="container mx-auto px-4 max-w-3xl">
-        <h1 className="mb-8 text-center">About Us</h1>
+        <h1 className="mb-8 text-center">Бидний тухай</h1>
         <div className="space-y-4 text-muted-foreground">
           <p>
-            Welcome to MONOCHROME, your destination for minimalist products that embrace the timeless elegance of black and white design.
+            Хар ба цагаан загварын мөнхийн дэгжин байдлыг шингээсэн минималист бүтээгдэхүүний таны очих газар болох QSTORE-д тавтай морил.
           </p>
           <p>
-            We believe in the power of simplicity. Our carefully curated collection features products that combine exceptional quality with clean, modern aesthetics.
+            Бид энгийн байдлын хүчинд итгэдэг. Манай цуглуулгад онцгой чанарыг цэвэр, орчин үеийн гоо зүйтэй хослуулсан бүтээгдэхүүнүүд бий.
           </p>
           <p>
-            Every item in our store is selected for its design excellence, functionality, and commitment to minimalist principles.
+            Манай дэлгүүрийн бараа бүрийг дизайн сайтай, ажиллагаатай, минималист зарчмыг баримталдаг гэдгээрээ сонгодог.
           </p>
         </div> 
       </div>

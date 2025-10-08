@@ -19,9 +19,6 @@ export function HomePage({ featuredProducts, allProducts, onViewAllProducts }: H
       <section className="container mx-auto px-4 py-16">
         <div className="text-center mb-12">
           <h2 className="mb-4">Онцлох бүтээгдэхүүн</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            QSTORE дээрх онцлох бүтээгдэхүүн
-          </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
